@@ -7,12 +7,12 @@ export default class Deck extends Component{
     render(){
         return (
                     <Fragment>
-                       <a  data-toggle="collapse" href="#card-collapse" role="button" aria-expanded="false" aria-controls="card-collapse">
-                           <nav aria-label="breadcrumb" style={{background: '#87cefa', border: '5 solid', padding: '20px'}}>
-                              <h3>Title</h3>
+                       <a  data-toggle="collapse" href={this.props.coll_div_link} role="button" aria-expanded="false" aria-controls={this.props.coll_div_id}>
+                           <nav aria-label="breadcrumb" style={{background: '#9999ff', border: '5 solid', padding: '20px'}}>
+                              <h3>{this.props.category_title}</h3>
                            </nav>
                        </a>
-                       <div class="collapse" id="card-collapse">
+                       <div class="collapse" id={this.props.coll_div_id}>
                            <div id = "wrapper" style={{background: '#eeeeee', border: '5 solid', padding: '20px'}}>
                                 <div class="card-columns">
                                     <Card />

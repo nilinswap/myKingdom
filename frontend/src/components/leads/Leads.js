@@ -6,6 +6,10 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
 import Deck from './Deck';
+
+
+const deck_designs = [["Rewards", "cc_0", "#cc_0"], ["Management", "cc_1", "#cc_1"], ["Deadline", "cc_2", "#cc_2"]]
+
 class Leads extends Component{
     static propTypes = {
         leads: PropTypes.array.isRequired,
@@ -22,10 +26,9 @@ class Leads extends Component{
         return (
 
                     <Fragment>
-
-                        <Deck />
-                        <Deck />
-                        <Deck />
+                        {deck_designs.map(ar => {
+                            return <Deck category_title={ar[0]} coll_div_id = {ar[1]} coll_div_link = {ar[2]}/>
+                        })}
 
                     </Fragment>
         )
