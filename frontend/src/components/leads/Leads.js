@@ -5,6 +5,7 @@ import {getLeads, deleteLead} from '../../actions/leads';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import Deck from './Deck';
 class Leads extends Component{
     static propTypes = {
         leads: PropTypes.array.isRequired,
@@ -19,8 +20,26 @@ class Leads extends Component{
     }
     render(){
         return (
+
                     <Fragment>
-                        <h2> Leads </h2>
+
+                        <Deck />
+                        <Deck />
+                        <Deck />
+
+                    </Fragment>
+        )
+    }
+}
+
+const mapStateToProps = state => ({
+    leads: state.leads.leads
+});
+export default connect(mapStateToProps, { getLeads, deleteLead })(Leads); //converts base component Leads into a container(higher order) component which is connected to state.
+
+
+/*
+<h2> Elements </h2>
                         <table className="table table-striped">
                             <thead>
                                 <tr>
@@ -44,15 +63,4 @@ class Leads extends Component{
                                     </tr>
                                 ))}
                             </tbody>
-                        </table>
-                    </Fragment>
-        );
-    }
-}
-
-const mapStateToProps = state => ({
-    leads: state.leads.leads
-});
-export default connect(mapStateToProps, { getLeads, deleteLead })(Leads); //converts base component Leads into a container(higher order) component which is connected to state.
-
-
+                        </table>*/
