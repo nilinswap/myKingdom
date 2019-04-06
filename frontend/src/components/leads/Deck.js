@@ -2,6 +2,9 @@ import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 
 import Card from './Card';
+
+
+
 export default class Deck extends Component{
 
     render(){
@@ -15,11 +18,9 @@ export default class Deck extends Component{
                        <div class="collapse" id={this.props.coll_div_id}>
                            <div id = "wrapper" style={{background: '#eeeeee', border: '5 solid', padding: '20px'}}>
                                 <div class="card-columns">
-                                    <Card />
-                                    <Card />
-                                    <Card />
-                                    <Card />
-                                    <Card />
+                                    {this.props.card_lis.map(card => {
+                                        return <Card />
+                                    })}
 
                                 </div>
                            </div>

@@ -1,3 +1,4 @@
+const card_sort_map = {'Management': [[2, 'Record', '', 'Management']], 'MindAbstract': [[4, 'InterestingThought', '', 'MindAbstract']], 'Reward': [[1, 'NewThing', '', 'Reward']], 'Deadline': [[3, 'Book', '', 'Deadline']]}
 import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 
@@ -8,7 +9,7 @@ import {connect} from 'react-redux';
 import Deck from './Deck';
 
 
-const deck_designs = [["Rewards", "cc_0", "#cc_0"], ["Management", "cc_1", "#cc_1"], ["Deadline", "cc_2", "#cc_2"]]
+const deck_designs = [["Reward", "cc_0", "#cc_0"], ["Management", "cc_1", "#cc_1"], ["Deadline", "cc_2", "#cc_2"], ["MindAbstract", "cc_3", "#cc_3"]]
 
 class Leads extends Component{
     static propTypes = {
@@ -27,7 +28,7 @@ class Leads extends Component{
 
                     <Fragment>
                         {deck_designs.map(ar => {
-                            return <Deck category_title={ar[0]} coll_div_id = {ar[1]} coll_div_link = {ar[2]}/>
+                            return <Deck card_lis = {card_sort_map[ar[0]]} category_title={ar[0]} coll_div_id = {ar[1]} coll_div_link = {ar[2]} />
                         })}
 
                     </Fragment>

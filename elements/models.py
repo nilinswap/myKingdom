@@ -4,10 +4,10 @@ class Element(models.Model):
 	name = models.CharField(max_length=100)
 	message = models.CharField(max_length=100)
 	created_on = models.DateTimeField(auto_now_add=True)
-	category = models.CharField(max_length=100)
+	category = models.CharField(max_length=100, null = True)
 	
 	
-class NewThings(models.Model):
+class NewThing(models.Model):
 	name = models.CharField(max_length=100)
 	message = models.CharField(max_length=100)
 	executed_on = models.DateTimeField()
@@ -29,7 +29,7 @@ class Book(models.Model):
 	deadline = models.DateTimeField()
 	reward_st = models.TextField()
 	
-class InterestingThoughts(models.Model):
+class InterestingThought(models.Model):
 	name = models.CharField(max_length=100)
 	message = models.CharField(max_length=100)
 	created_on = models.DateTimeField(auto_now_add=True)

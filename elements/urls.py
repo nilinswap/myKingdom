@@ -7,3 +7,6 @@ router.register('api/elements', ElementViewSet, 'elements')
 
 print(router.urls)
 urlpatterns = router.urls
+
+from .utils import update
+update()
