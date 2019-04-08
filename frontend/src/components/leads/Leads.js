@@ -1,4 +1,4 @@
-const card_sort_map = {'Management': [[2, 'Record', '', 'Management']], 'MindAbstract': [[4, 'InterestingThought', '', 'MindAbstract']], 'Reward': [[1, 'NewThing', '', 'Reward']], 'Deadline': [[3, 'Book', '', 'Deadline']]}
+const card_sort_map = {'Deadline': [[3, 'Book', '', 'Deadline']], 'Management': [[2, 'Record', '', 'Management']], 'MindAbstract': [[4, 'InterestingThought', '', 'MindAbstract']], 'Reward': [[1, 'NewThing', '', 'Reward']]}
 import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 

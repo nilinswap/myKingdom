@@ -19,7 +19,7 @@ export default class Deck extends Component{
                            <div id = "wrapper" style={{background: '#eeeeee', border: '5 solid', padding: '20px'}}>
                                 <div class="card-columns">
                                     {this.props.card_lis.map(card => {
-                                        return <Card />
+                                        return <Card title={card[1]} msg={card[2]} />
                                     })}
 
                                 </div>
