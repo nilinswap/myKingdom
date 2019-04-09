@@ -2,8 +2,9 @@ import React, {Component, Fragment} from 'react';
 import ReactDOM from 'react-dom';
 
 import Card from './Card';
+import RewardCard from './RewardCard';
 
-
+//const cardclasslis=[RewardCard, ManagementCard, DeadlineCard, RewardCard];
 
 export default class Deck extends Component{
 
@@ -19,7 +20,15 @@ export default class Deck extends Component{
                            <div id = "wrapper" style={{background: '#eeeeee', border: '5 solid', padding: '20px'}}>
                                 <div class="card-columns">
                                     {this.props.card_lis.map(card => {
-                                        return <Card title={card[1]} msg={card[2]} />
+
+                                        if( card[3] === 'Reward')
+                                            return <RewardCard title={card[1]} msg={card[2]} />
+                                        else if(card[3]==='Management')
+                                            return <Card title={card[1]} msg={card[2]} />
+                                        else if(card[3]==='Deadline')
+                                            return <Card title={card[1]} msg={card[2]} />
+                                        else if(card[3]==='Record')
+                                            return <Card title={card[1]} msg={card[2]} />
                                     })}
 
                                 </div>
@@ -36,6 +45,13 @@ export default class Deck extends Component{
 
 
 /*
+if( card[0] === 'Reward')
+                                            return <Card title={card[1]} msg={card[2]} />
+                                        else if(card[0]==='Management')
+                                            return <Card title={card[1]} msg={card[2]} />
+                                        else if(card[0]==='Deadline')
+                                            return <Card title={card[1]} msg={card[2]} />
+                                        else if(card[0]==='Record')
 <div class="card p-3">
                             <blockquote class="blockquote mb-0 card-body">
                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
